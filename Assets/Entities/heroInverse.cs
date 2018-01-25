@@ -21,6 +21,7 @@ public class heroInverse : MonoBehaviour {
 	}
 
 	void Movement(){
+		//as with the other code, this may switch
 		if (Input.GetKey (KeyCode.D)) {
 			transform.position += Vector3.left * speed * Time.deltaTime;
 		} else if (Input.GetKey (KeyCode.RightArrow)) {
