@@ -5,7 +5,8 @@ using UnityEngine;
 public class heroController : MonoBehaviour {
 
 	float speed = 4f;
-	public float jumpHeight = 7.2f;
+	public float jumpHeight = 8f;
+	//This should be 8, but you should also double check in the editor to make sure it works
 
 	private Rigidbody2D heroBody;
 
@@ -21,6 +22,9 @@ public class heroController : MonoBehaviour {
 	}
 
 	void Movement(){
+		//The movement is pretty basic and then the movement is inverted for the inverse Hero
+		//In the future I'll be working on tying the two of them directly together instead of
+		//each doing the math independently
 		if (Input.GetKey (KeyCode.D)) {
 			transform.position += Vector3.right * speed * Time.deltaTime;
 		} else if (Input.GetKey (KeyCode.RightArrow)) {

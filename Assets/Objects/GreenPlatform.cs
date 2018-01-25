@@ -26,6 +26,7 @@ public class GreenPlatform : MonoBehaviour {
 		//}
 	}
 
+	//Switches between being visible and touchable and invisible and intangiable.
 	public void Switch(){
 		if (platformOn == false) {
 			sprite.sprite = (sprites [0]);
