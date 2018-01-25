@@ -6,6 +6,8 @@ public class buttonPress : MonoBehaviour {
 
 	public GreenPlatform platforms;
 
+	public bool Pressed = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -22,7 +24,12 @@ public class buttonPress : MonoBehaviour {
 	void OnTriggerStay2D (Collider2D coll){
 		if (coll.tag == "Player") {
 			if (Input.GetKeyDown (KeyCode.Q)) {
-				platforms.Switch ();
+				//platforms.Switch ();
+				if (Pressed == false) {
+					Pressed = true;
+				} else {
+					Pressed = false;
+				}
 			}
 		}
 	}
