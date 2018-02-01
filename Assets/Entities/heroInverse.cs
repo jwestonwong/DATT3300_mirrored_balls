@@ -6,6 +6,7 @@ public class heroInverse : MonoBehaviour {
 
 	float speed = 4f;
 	public float jumpHeight = 7.2f;
+	public bool canJump = true;
 
 	private Rigidbody2D heroBody;
 
@@ -36,8 +37,11 @@ public class heroInverse : MonoBehaviour {
 
 	void Jump(){
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			heroBody.velocity = new Vector2 (0, jumpHeight);
-			Debug.Log ("Jumping");
+			if (canJump) {
+				heroBody.velocity = new Vector2 (0, jumpHeight);
+				Debug.Log ("Jumping");
+				canJump = false;
+			}
 		}
 	}
 

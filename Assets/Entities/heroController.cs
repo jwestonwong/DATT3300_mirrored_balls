@@ -6,6 +6,7 @@ public class heroController : MonoBehaviour {
 
 	float speed = 4f;
 	public float jumpHeight = 8f;
+	public bool canJump = true;
 	//This should be 8, but you should also double check in the editor to make sure it works
 
 	private Rigidbody2D heroBody;
@@ -39,8 +40,11 @@ public class heroController : MonoBehaviour {
 
 	void Jump(){
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			heroBody.velocity = new Vector2 (0, jumpHeight);
-			Debug.Log ("Jumping");
+			if (canJump) {
+				heroBody.velocity = new Vector2 (0, jumpHeight);
+				Debug.Log ("Jumping");
+				canJump = false;
+			}
 		}
 	}
 

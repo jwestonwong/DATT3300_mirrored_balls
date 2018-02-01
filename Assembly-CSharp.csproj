@@ -51,6 +51,7 @@
      <Compile Include="Assets\Objects\GreenPlatform.cs" />
      <Compile Include="Assets\Objects\ReversePlatform.cs" />
      <Compile Include="Assets\Objects\buttonPress.cs" />
+     <Compile Include="Assets\Objects\groundCheck.cs" />
      <Compile Include="Assets\Objects\killFloor.cs" />
      <Compile Include="Assets\Other\Goal.cs" />
      <Compile Include="Assets\Other\LevelManager.cs" />
