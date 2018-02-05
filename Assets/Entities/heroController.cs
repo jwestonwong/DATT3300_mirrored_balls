@@ -41,9 +41,9 @@ public class heroController : MonoBehaviour {
 	void Jump(){
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (canJump) {
+				canJump = false;
 				heroBody.velocity = new Vector2 (0, jumpHeight);
 				Debug.Log ("Jumping");
-				canJump = false;
 			}
 		}
 	}

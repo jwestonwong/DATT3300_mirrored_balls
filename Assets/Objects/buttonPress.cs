@@ -31,6 +31,15 @@ public class buttonPress : MonoBehaviour {
 					Pressed = false;
 				}
 			}
+		} else if (coll.tag == "Inverse") {
+			if (Input.GetKeyDown (KeyCode.Q)) {
+				//platforms.Switch ();
+				if (Pressed == false) {
+					Pressed = true;
+				} else {
+					Pressed = false;
+				}
+			}
 		}
 	}
 		

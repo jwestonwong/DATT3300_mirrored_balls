@@ -10,12 +10,15 @@ public class ReversePlatform : MonoBehaviour {
     public Sprite[] sprites;
     public buttonPress button;
 
+	public bool isSolid;
+
     // Use this for initialization
     void Start () {
         sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<Collider2D>();
         sprite.sprite = (sprites[1]);
         coll.isTrigger = false;
+		isSolid = false;
     }
 	
 	// Update is called once per frame
@@ -27,11 +30,13 @@ public class ReversePlatform : MonoBehaviour {
             {
                 sprite.sprite = (sprites[1]);
                 coll.isTrigger = true;
+				isSolid = false;
             }
             else
             {
                 sprite.sprite = (sprites[0]);
                 coll.isTrigger = false;
+				isSolid = true;
             }
         }
     }

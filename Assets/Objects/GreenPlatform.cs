@@ -10,8 +10,7 @@ public class GreenPlatform : MonoBehaviour {
 	public Sprite[] sprites;
 	public buttonPress button;
 
-	private heroController hC;
-	private heroInverse hI;
+	public bool isSolid;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +18,7 @@ public class GreenPlatform : MonoBehaviour {
 		coll = GetComponent<Collider2D> ();
 		sprite.sprite = (sprites [0]);
 		coll.isTrigger = false;
-		hC = GameObject.FindObjectOfType<heroController>();
-		hI = GameObject.FindObjectOfType<heroInverse>();
+		isSolid = true;
 	}
 	
 	// Update is called once per frame
@@ -30,19 +28,12 @@ public class GreenPlatform : MonoBehaviour {
 			if (button.Pressed == false) {
 				sprite.sprite = (sprites [0]);
 				coll.isTrigger = false;
+				isSolid = true;
 			} else {
 				sprite.sprite = (sprites [1]);
 				coll.isTrigger = true;
+				isSolid = false;
 			}
 		}
 	}
-
-	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag == "Player") {
-			Debug.Log ("On Ground");
-			hC.canJump = true;
-			hI.canJump = true;
-		}
-	}
-
 }
